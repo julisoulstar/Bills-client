@@ -1,0 +1,37 @@
+<div class="conteiner mt-3">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Facturas:</h3>
+                    <button class="btn btn-success float-end" routerLink="/create-bill">Nueva factura</button>
+                    <table *ngIf="listBills.length >0" class="table text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Valor total</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let bill of listBills">
+                                <td class="align-middle">{{bill.code}}</td>
+                                <td class="align-middle">{{bill.paid ? 'Pagada': 'Sin pagar'}}</td>
+                                <td class="align-middle">{{bill.totalValue | number}}</td>
+                                <td class="align-middle">{{bill.fechaCreacion | date}}</td>
+                                <td class="align-middle">
+                                    <button [routerLink]="['/edit-bill', bill._id]" class="btn btn-info m-1">Ver</button>
+                                    <button [routerLink]="['/edit-bill', bill._id]" class="btn btn-warning m-1">Editar</button>
+                                    <button (click)="deleteBill(bill._id)" class="btn btn-danger m-1">Borrar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span *ngIf="listBills.length == 0">No hay facturas</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

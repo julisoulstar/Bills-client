@@ -1,0 +1,11 @@
+#toast-container>div {
+    opacity: 1 !important;
+}
+
+form .addButton {
+    height: 38px;
+    width : 100%;
+}
+form table tbody h6{
+    text-align: left !important;
+}

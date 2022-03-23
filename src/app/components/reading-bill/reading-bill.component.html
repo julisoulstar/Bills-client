@@ -22,7 +22,7 @@
                                 <td class="align-middle">{{bill.totalValue | number}}</td>
                                 <td class="align-middle">{{bill.fechaCreacion | date}}</td>
                                 <td class="align-middle">
-                                    <button [routerLink]="['/edit-bill', bill._id]" class="btn btn-info m-1">Ver</button>
+                                    <!-- <button [routerLink]="['/edit-bill', bill._id]" class="btn btn-info m-1">Ver</button> -->
                                     <button [routerLink]="['/edit-bill', bill._id]" class="btn btn-warning m-1">Editar</button>
                                     <button (click)="deleteBill(bill._id)" class="btn btn-danger m-1">Borrar</button>
                                 </td>
